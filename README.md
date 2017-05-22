@@ -1,2 +1,3 @@
 # testtoday
-testtoday for test
+This is my first initial commit
+
