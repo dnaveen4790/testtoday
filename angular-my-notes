@@ -1,0 +1,69 @@
+Q) what is a module in angularjs?
+a) A module is a container for different parts of your application say directives, controllers, services, filters, expressions etc.
+
+---> A Module can be treated as a entry point of tour application
+
+----> Can create a module using 
+      var myapp = angular.module("name",[dependencies])
+
+Q) what is a controller?
+A) In angular, controller is a javascript function. The responsibility of a controller is to create a model for the view(html) to display
+
+eg: var mycontroller = function($scope){
+}
+
+note: need to register controller with module say like below
+
+myapp.controller("mycontroller",function($scope){
+  $scope.message = "hello angular world";
+});
+
+Q) Why we need as controller?
+A) The job of the controller is to built a model for the view (how?: It does by attaching a model to the scope)
+
+
+Angular Error scenario:
+## What happens when controller name is mispelled
+
+	-: An Error is raised .Use developer tools to see what the error is about?
+	-:The data binding expressions in the view under the controller will not be evaluated
+
+## What happens when property name is mispelled in data binding expressions of a controller?
+	-:Angular will not report error that means it simply returns a null value.
+	
+## Why do we get 404 error if we use data binding expressin in the src attribute of image tag?
+	-:Here First html DOM is parsed and then it looks for the specified source in src tag which is not available.
+	-:secondarily, when angular evaluates databinding expression, then src url is evaulated from controller.
+	-:As a result two requests to server to fetch url
+
+	  so the solution is use ng-src attribute(so that ng-src is loaded when angular starts evaluating angular expression)
+
+## What happens when we use a data model which is not defined?
+
+	-:Internally angular created that data model and defined to null
+
+Note: 
+	* ng-model can be used with any <input/> element type, textArea and <select/> 
+	
+Q) What filters can do?
+A) Filters can format, sort and filter data.
+
+	 syntax:
+	{{expression | filterName: parameter}}
+
+eg:    {{expression | lowercase}} , {{expression | uppercase}}, {{expression | date: dd//mm//yy}}, 
+	{{exp | currency:"$":2}},  {{exp | limitTO:2}} 
+
+
+Note: *Filters can be used with binding expressions or a directive(like limitTo for ng-repeat)
+
+Q)orderby filter?
+A)used to sort data in ascending or descending order. 
+
+syntax:{{exp |orderBy: exp: reverse(optional)}}
+eg: {{employee in employees |orderBy: 'salary': false}}(By default false ascending order)
+
+can also use + and - sign to sort in ascending or desc order
+
+eg: {{employee in employees |orderBy: '+salary'}}
+
