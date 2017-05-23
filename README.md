@@ -10,3 +10,5 @@ Change content to raise errors
 
 now adding some new content
 >>>>>>> develop
+
+new xy content in master
