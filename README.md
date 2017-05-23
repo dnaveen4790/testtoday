@@ -12,3 +12,5 @@ now adding some new content
 >>>>>>> develop
 
 this update taken from master and push into develop
+
+new content after xy
