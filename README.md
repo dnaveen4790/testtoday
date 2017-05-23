@@ -13,4 +13,8 @@ now adding some new content
 
 this update taken from master and push into develop
 
+<<<<<<< HEAD
 new content after xy
+=======
+xy content added
+>>>>>>> f903a0176ae9ff24c91332dc337cf80ecc26d0fa
